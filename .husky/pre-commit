@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+. "$(dirname -- "$0")/_/husky.sh"
+
+if git diff --name-only --cached | grep -q "package-lock.json"; then
+  if [ "$(git diff --cached --name-only | wc -l)" -eq "1" ]; then
+    echo -e "\xE2\x9C\x94 This commit contains only a package-lock.json."
+    exit 0
+  else
+    echo -e "\xE2\x9D\x8C You need to commit package-lock.json in a separate commit."
+    exit 1
+  fi
+fi
+
+npm run lint
+npm run build
+npx sort-package-json && git add package.json
+
+{
+  git diff --staged -- package.json -U0 | grep -E "version"
+} || {
+  echo -e "\033[33mWarning: package.json version hasn't changed.\033[0m"
+}

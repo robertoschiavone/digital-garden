@@ -1,0 +1,54 @@
+---
+title: "Chebyshev Distance"
+published_date: "2023-08-19"
+category: "math"
+---
+
+Aliases:
+- **Tchebychev distance**
+- **maximum metric**
+- $\textbf{L}_\infty$ **metric**
+- **chessbard distance**
+
+## Definition
+
+The *Chebyshev distance* between two vectors or points $x$ and $y$, with standard coordinates $x_i$ and $y_i$,
+respectively, is
+
+$$
+D_{\text{Chebyshev}} (x, y)\coloneqq \max_i (\lvert x_i - y_i \rvert).
+$$
+
+This equals the limit of the $L_p$ metrics:
+
+$$
+\lim_{p \to \infty} \left(\sum^{n}_{i = 1} \lvert x_i - y_i\rvert^p\right)^{1 / p},
+$$
+
+hence it is also known as the $\text{L}_\infty$ metric.
+
+## Example
+
+Let's say we have two points in a 2-dimensional space: Point $A$ with coordinates $(x_1, y_1)$ and Point $B$ with
+coordinates $(x_2, y_2)$. The *Chebyshev distance* between these two points can be computed as follows:
+
+1. **Calculate Absolute Differences:** compute the absolute differences between corresponding coordinates of the two
+points.
+ - Absolute difference in $x$-coordinates: $\lvert x_2 - x_1 \rvert$
+ - Absolute difference in $y$-coordinates: $\lvert y_2 - y_1 \rvert$
+
+2. **Find Maximum Absolute Difference:** compare the absolute differences calculated in step 1 and choose the larger of
+the two values. The maximum absolute difference is the *Chebyshev distance* between the two points.
+
+Suppose we have Point $A$ with coordinates $(2, 5)$ and Point $B$ with coordinates $(7, 9)$.
+
+1. **Calculate Absolute Differences:**
+ - absolute difference in $x$-coordinates: $\lvert 7 - 2 \rvert = 5$
+ - absolute difference in $y$-coordinates: $\lvert 9 - 5 \rvert = 4$
+
+2. **Find Maximum Absolute Difference:** the *Chebyshev distance* between points $A$ and $B$ is $5$ because it's the
+larger of the two absolute differences computed above.
+
+References:
+
+1. [Chebyshev distance](https://en.wikipedia.org/wiki/Chebyshev_distance)

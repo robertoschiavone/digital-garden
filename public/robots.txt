@@ -1,0 +1,24 @@
+# Baidu
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: Baiduspider-image
+Disallow: /
+
+User-agent: Baiduspider-video
+Disallow: /
+
+# Common Crawl
+User-agent: CCBot
+Disallow: /
+
+# OpenAI
+User-agent: GPTBot
+Disallow: /
+
+# Yandex
+User-agent: Yandex
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
