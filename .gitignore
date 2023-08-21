@@ -101,9 +101,6 @@ fabric.properties
 
 .idea/*
 
-!.idea/codeStyles
-!.idea/runConfigurations
-
 ### NextJS ###
 # dependencies
 /node_modules
